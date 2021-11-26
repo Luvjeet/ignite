@@ -26,8 +26,13 @@ const currentMonth = getCurrentMonth();
 const currentDate = getCurrentDate();
 const currentDay = `${currentYear}-${currentMonth}-${currentDate}`;
 const lastYear = `${currentYear - 1}-${currentMonth - 1}-${currentDate - 1}`;
-const nextYear = `${currentYear - 1}-${currentMonth - 1}-${currentDate - 1}`;
+const nextYear = `${currentYear + 1}-${currentMonth + 1}-${currentDate + 1}`;
 
-// popular games
-const popular_games = `&dates=${lastYear},${currentDay}&ordering=-rating&page_size=10`;
+// Constructin API'S
+const popular_games = `&dates=${lastYear},${currentDay}&ordering=-rating&page_size=15`;
+const upcoming_games = `&dates=${currentDay},${nextYear}&ordering=-added&page_size=15`;
+const newGames = `&dates=${lastYear},${currentDay}&ordering=-release&page_size=15`;
+
 export const popularGamesUrl = () => `${base_url}${popular_games}`;
+export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;
+export const newGamesUrl = () => `${base_url}${newGames}`;
