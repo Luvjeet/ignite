@@ -1,4 +1,4 @@
-const initialState = { game: {}, screenShot: {} };
+const initialState = { game: {}, screen: {} };
 
 const detailReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -6,7 +6,7 @@ const detailReducer = (state = initialState, action) => {
             return {
                 ...state,
                 game: action.payload.game,
-                screenShot: action.payload.screenShot,
+                screen: action.payload.screen,
             };
         default:
             return { ...state };

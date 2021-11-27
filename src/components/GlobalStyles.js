@@ -5,20 +5,17 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        scrollbar-width: thin;
-        scrollbar-color: darkgray transparent;
     }
     html{
         &::-webkit-scrollbar{
-            width: .7rem;
+            width: 0.5rem;
         }
         &::-webkit-scrollbar-track{
-            background: transparent;
+            background:white;
         }
         &::-webkit-scrollbar-thumb{
             background-color: darkgray;
-            border-radius: 20px;
-            border: transparent;
+            border-radius: 1rem;
         }
     }
 
