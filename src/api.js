@@ -29,9 +29,9 @@ const lastYear = `${currentYear - 1}-${currentMonth - 1}-${currentDate - 1}`;
 const nextYear = `${currentYear + 1}-${currentMonth + 1}-${currentDate + 1}`;
 
 // Constructin API'S
-const popular_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-rating&page_size=15`;
-const upcoming_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${currentDay},${nextYear}&ordering=-added&page_size=15`;
-const newGames = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-release&page_size=15`;
+const popular_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-rating&page_size=10`;
+const upcoming_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${currentDay},${nextYear}&ordering=-added&page_size=10`;
+const newGames = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-release&page_size=10`;
 
 export const popularGamesUrl = () => `${base_url}${popular_games}`;
 export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;

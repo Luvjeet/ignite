@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     html{
         &::-webkit-scrollbar{
             width: 0.5rem;
+            
         }
         &::-webkit-scrollbar-track{
             background:white;
@@ -42,6 +43,9 @@ const GlobalStyles = createGlobalStyle`
     a{
         text-decoration: none;
         color:#333;
+    }
+    img{
+        display: block;
     }
 `;
 
