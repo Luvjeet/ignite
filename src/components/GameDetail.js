@@ -7,7 +7,7 @@ import styled from "styled-components";
 // Redux
 import { useSelector } from "react-redux";
 
-const GameDetail = () => {
+const GameDetail = ({ pathId }) => {
     const navigate = useNavigate();
     // Exit Detail
     const exitDetailHandler = (e) => {
@@ -23,10 +23,12 @@ const GameDetail = () => {
         <>
             {!isLoading && (
                 <CardShadow className="Shadow" onClick={exitDetailHandler}>
-                    <Detail>
+                    <Detail layoutId={pathId}>
                         <Stats>
                             <div className="rating">
-                                <h3>{game.name}</h3>
+                                <motion.h3 layoutId={`title ${pathId}`}>
+                                    {game.name}
+                                </motion.h3>
                                 <p>Rating: {game.rating}</p>
                             </div>
                             <Info>
@@ -41,7 +43,8 @@ const GameDetail = () => {
                             </Info>
                         </Stats>
                         <Media>
-                            <img
+                            <motion.img
+                                layoutId={`image ${pathId}`}
                                 src={smallImage(game.background_image, 1280)}
                                 alt={game.background_image}
                             />
