@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { smallImage } from "../util";
 // Styling and animation
 import { motion } from "framer-motion";
 import styled from "styled-components";
@@ -41,14 +42,17 @@ const GameDetail = () => {
                         </Stats>
                         <Media>
                             <img
-                                src={game.background_image}
+                                src={smallImage(game.background_image, 1280)}
                                 alt={game.background_image}
                             />
                         </Media>
+                        <Description>
+                            <p>{game.reddit_description}</p>
+                        </Description>
                         <div className="gallery">
                             {screen.results.map((screen) => (
                                 <img
-                                    src={screen.image}
+                                    src={smallImage(screen.image, 1280)}
                                     key={screen.id}
                                     alt={screen.image}
                                 />
