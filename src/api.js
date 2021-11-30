@@ -25,8 +25,8 @@ const currentYear = new Date().getFullYear();
 const currentMonth = getCurrentMonth();
 const currentDate = getCurrentDate();
 const currentDay = `${currentYear}-${currentMonth}-${currentDate}`;
-const lastYear = `${currentYear - 1}-${currentMonth - 1}-${currentDate - 1}`;
-const nextYear = `${currentYear + 1}-${currentMonth + 1}-${currentDate + 1}`;
+const lastYear = `${currentYear - 1}-${currentMonth}-${currentDate}`;
+const nextYear = `${currentYear + 1}-${currentMonth}-${currentDate}`;
 
 // Constructin API'S
 const popular_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-rating&page_size=10`;
