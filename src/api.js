@@ -29,9 +29,9 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDate}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDate}`;
 
 // Constructin API'S
-const popular_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-rating&page_size=10`;
-const upcoming_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${currentDay},${nextYear}&ordering=-added&page_size=10`;
-const newGames = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-release&page_size=10`;
+const popular_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-rating&page_size=5`;
+const upcoming_games = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${currentDay},${nextYear}&ordering=-added&page_size=5`;
+const newGames = `?key=${process.env.REACT_APP_RAWG_ID}&dates=${lastYear},${currentDay}&ordering=-release&page_size=5`;
 
 export const popularGamesUrl = () => `${base_url}${popular_games}`;
 export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;
@@ -43,3 +43,8 @@ export const gameDetailsUrl = (game_id) =>
 // Game Screenshots
 export const gameScreenShotsUrl = (game_id) =>
     `${base_url}/${game_id}/screenshots?key=${process.env.REACT_APP_RAWG_ID}`;
+
+// Searched game
+export const searchGameURL = (game_name) =>
+    `${base_url}?key=${process.env.REACT_APP_RAWG_ID}&search=${game_name}&page_size=9`;
+console.log(searchGameURL());
