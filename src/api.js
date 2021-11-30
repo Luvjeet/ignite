@@ -47,4 +47,3 @@ export const gameScreenShotsUrl = (game_id) =>
 // Searched game
 export const searchGameURL = (game_name) =>
     `${base_url}?key=${process.env.REACT_APP_RAWG_ID}&search=${game_name}&page_size=9`;
-console.log(searchGameURL());
